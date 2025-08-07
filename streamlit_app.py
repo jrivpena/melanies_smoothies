@@ -4,8 +4,7 @@ import streamlit as st
 from snowflake.snowpark.functions import col 
 ## Uso de la API
 import requests
-
-Import pandas as pd
+import pandas as pd
 
 
 # Write directly to the app
