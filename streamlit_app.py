@@ -25,8 +25,8 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('SEARC
 # Convert the Snowpark Dataframe to a Pandas DataFrame so we can use the LOC Function
 pd_df=my_dataframe.to_pandas()
 
-st.dataframe(pd_df)
-st.stop()
+##st.dataframe(pd_df)
+##st.stop()
 
 ingredients_list = st.multiselect(
     'Choose up to 5 ingredientes:'
@@ -67,7 +67,7 @@ if ingredients_list:
     ##st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
 
 
-    filtered = pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON']
+    filtered = pd_df.loc[pd_df['SEARCH_ON'] == fruit_chosen, 'SEARCH_ON']
 
     if not filtered.empty:
         search_on = filtered.iloc[0]
